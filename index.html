@@ -11,44 +11,93 @@
     <h1>¿Me quiere? ¿no me quiere?</h1>
     <h2>Descubrelo aqui</h2>
     <p>Un pequeño juego que te permite saber si hay chances de que esa persona este enamorada de ti</p>
-    <div><button id="initJuego">Iniciar juego</button></div>
+    <div><button id="initGame" onclick="initGame()">Iniciar juego</button></div>
     <div id="questions">
-        <h2>Reglas</h2>
+        <h2 id="welcome">Hola las Reglas son</h2>
         <p>Responde por si o por no</p>
+        <p>Luego Cuenta cuantas respuestas estan en verde</p>
+        <p>Finalente presiona para Ver los resultados</p>
         <ol>
             <li id="question1">¿Se interesa genuinamente por cómo me siento, incluso en cosas pequeñas?
-                <button>si</button><button>no</button>
+                <button id="buttonYesQuestion1"
+                    onclick="answerYes(question1,buttonYesQuestion1,buttonNoQuestion2)">si</button>
+                <button id="buttonNoQuestion1"
+                    onclick="answerNo(question1,buttonNoQuestion1,buttonYesQuestion2)">no</button>
             </li>
-            <li>¿Busca pasar tiempo conmigo sin que haya un motivo específico?<button>si</button><button>no</button>
+            <li id="question2">¿Busca pasar tiempo conmigo sin que haya un motivo específico?
+                <button id="buttonYesQuestion2"
+                    onclick="answerYes(question2,buttonYesQuestion2,buttonNoQuestion1)">si</button>
+                <button id="buttonNoQuestion2"
+                    onclick="answerNo(question2,buttonNoQuestion2,buttonYesQuestion1)">no</button>
             </li>
-            <li>¿Me escucha con atención cuando hablo, aunque no sea algo
-                importante?<button>si</button><button>no</button></li>
-            <li>¿Me ha mirado alguna vez como si yo fuera lo más especial en el
-                lugar?<button>si</button><button>no</button></li>
-            <li>¿Se acuerda de detalles que le conté hace tiempo?<button>si</button><button>no</button></li>
-            <li>¿Se pone un poco celosa o protectora cuando alguien más se me
-                acerca?<button>si</button><button>no</button></li>
-            <li>¿Hace cosas para hacerme sentir bien, incluso sin que se lo pida?<button>si</button><button>no</button>
+            <li id="question3">¿Me escucha con atención cuando hablo, aunque no sea algo
+                importante?
+                <button id="buttonYesQuestion3"
+                    onclick="answerYes(question3,buttonYesQuestion3,buttonNoQuestion3)">si</button>
+                <button id="buttonNoQuestion3"
+                    onclick="answerNo(question3,buttonNoQuestion3,buttonYesQuestion3)">no</button>
             </li>
-            <li>¿Me incluye en sus planes a futuro o habla de “nosotros”?<button>si</button><button>no</button></li>
-            <li>¿Me ha dicho o demostrado que me admira o que le inspiro algo
-                especial?<button>si</button><button>no</button></li>
-            <li>¿Ha mostrado tristeza o enojo al pensar en perderme o alejarse de
-                mí<button>si</button><button>no</button></li>
+            <li id="question4">¿Me ha mirado alguna vez como si yo fuera lo más especial en el
+                lugar?
+                <button id="buttonYesQuestion4"
+                    onclick="answerYes(question4,buttonYesQuestion4,buttonNoQuestion4)">si</button>
+                <button id="buttonNoQuestion4"
+                    onclick="answerNo(question4,buttonNoQuestion4,buttonYesQuestion4)">no</button>
+            </li>
+            <li id="question5">¿Se acuerda de detalles que le conté hace tiempo?
+                <button id="buttonYesQuestion5"
+                    onclick="answerYes(question5,buttonYesQuestion5,buttonNoQuestion5)">si</button>
+                <button id="buttonNoQuestion5"
+                    onclick="answerNo(question5,buttonNoQuestion5,buttonYesQuestion5)">no</button>
+            </li>
+            <li id="question6">¿Se pone un poco celosa o protectora cuando alguien más se me
+                acerca?
+                <button id="buttonYesQuestion6"
+                    onclick="answerYes(question6,buttonYesQuestion6,buttonNoQuestion6)">si</button>
+                <button id="buttonNoQuestion6"
+                    onclick="answerNo(question6,buttonNoQuestion6,buttonYesQuestion6)">no</button>
+            </li>
+            <li id="question7">¿Hace cosas para hacerme sentir bien, incluso sin que se lo pida?
+                <button id="buttonYesQuestion7"
+                    onclick="answerYes(question7,buttonYesQuestion7,buttonNoQuestion7)">si</button>
+                <button id="buttonNoQuestion7"
+                    onclick="answerNo(question7,buttonNoQuestion7,buttonYesQuestion7)">no</button>
+            </li>
+            <li id="question8">¿Me incluye en sus planes a futuro o habla de “nosotros”?
+                <button id="buttonYesQuestion8"
+                    onclick="answerYes(question8,buttonYesQuestion8,buttonNoQuestion8)">si</button>
+                <button id="buttonNoQuestion8"
+                    onclick="answerNo(question8,buttonNoQuestion8,buttonYesQuestion8)">no</button>
+            </li>
+            <li id="question9">¿Me ha dicho o demostrado que me admira o que le inspiro algo
+                especial?
+                <button id="buttonYesQuestion9"
+                    onclick="answerYes(question9,buttonYesQuestion9,buttonNoQuestion9)">si</button>
+                <button id="buttonNoQuestion9"
+                    onclick="answerNo(question9,buttonNoQuestion9,buttonYesQuestion9)">no</button>
+            </li>
+            <li id="question10">¿Ha mostrado tristeza o enojo al pensar en perderme o alejarse de
+                mí
+                <button id="buttonYesQuestion10"
+                    onclick="answerYes(question10,buttonYesQuestion10,buttonNoQuestion10)">si</button>
+                <button id="buttonNoQuestion10"
+                    onclick="answerNo(question10,buttonNoQuestion10,buttonYesQuestion10)">no</button>
+            </li>
         </ol>
-        <button id="result">Ver Resultado</button>
+        <button id="result" onclick="seeResult()">Ver resultado</button>
     </div>
-    <div>
+    <div id="listResult">
         <ul>
-            <li>8 a 10 "sí": Muy probablemente está enamorada de vos.</li>
-            <li>5 a 7 "sí": Hay sentimientos fuertes, quizás amor en desarrollo.</li>
-            <li>Menos de 5 "sí": Puede haber cariño o atracción, pero tal vez no amor profundo aún.</li>
+            <li id="result8to10">8 a 10 "sí": Muy probablemente está enamorada de vos.</li>
+            <li id="result5to7">5 a 7 "sí": Hay sentimientos fuertes, quizás amor en desarrollo.</li>
+            <li id="result0to4">Menos de 5 "sí": Puede haber cariño o atracción, pero tal vez no amor profundo aún.</li>
         </ul>
     </div>
     <footer>
         <p>by:Ari</p>
     </footer>
-   
+
 </body>
+<script src="script.js"></script>
 
 </html>

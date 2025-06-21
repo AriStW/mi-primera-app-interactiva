@@ -1,38 +1,18 @@
-body{
+body {
     align-content: center;
     text-align: center;
 }
+
 h1 {
     color: chocolate;
 }
+
 h2 {
     color: chocolate;
 }
-#initJuego {
-    display: flex; 
-    justify-content: center;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-    transition: background-color 0.3s;
-}
-#initJuego:hover {
-    background-color: #3e8e41;
-}
-#questions{
+
+#initGame {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#result {
-    display: flex; 
     justify-content: center;
     background-color: #4CAF50;
     border: none;
@@ -47,6 +27,46 @@ h2 {
     transition: background-color 0.3s;
 }
 
+#initGame:hover {
+    background-color: #3e8e41;
+}
+
+#questions {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result {
+    display: flex;
+    justify-content: center;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+}
+
+ol {
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    padding: 10px;
+}
+
 #result:hover {
     background-color: #3e8e41;
+}
+
+#listResult {
+    display: none;
+    flex-direction: column;
 }
