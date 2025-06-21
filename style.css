@@ -1,3 +1,55 @@
-h1{
+body{
+    align-content: center;
     text-align: center;
+}
+h1 {
+    color: chocolate;
+}
+h2 {
+    color: chocolate;
+}
+#initJuego {
+    display: flex; 
+    justify-content: center;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+}
+#initJuego:hover {
+    background-color: #3e8e41;
+}
+#questions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+p{
+    size: large;
+}
+#result {
+    display: flex; 
+    justify-content: center;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+}
+
+#result:hover {
+    background-color: #3e8e41;
 }
