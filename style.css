@@ -31,9 +31,6 @@ h2 {
     flex-direction: column;
     align-items: center;
 }
-p{
-    size: large;
-}
 #result {
     display: flex; 
     justify-content: center;
