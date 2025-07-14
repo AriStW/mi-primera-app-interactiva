@@ -1,15 +1,24 @@
 let yesOrNoList = [];
 
-function initGame() {                                           //inicia juego solicitando nombre saluda y mostrar cuerpo de juego
+function initGame() {       //inicia juego solicitando nombre saluda y mostrar cuerpo de juego                                   
+    const form = document.getElementById('formInitMenu');
     const welcome = document.getElementById("welcome");
     const questions = document.getElementById("questions");
-    const initMenu = document.getElementById("initMenu");
+    
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
 
-    let name = prompt("Por favor, ingresa tu nombre:");
-    welcome.textContent = "Bienvenido/a " + name +"descubrelo respondiendo si o no";
-    questions.style.display = "flex";
-    initMenu.style.display = "none";
+        form.style.display = "none";
+        questions.style.display = "flex";
+        welcome.textContent = "Bienvenido/a " + name +" descubrelo respondiendo si o no";        
+        
+    });
+    console.log("Funciona");
+    console.log(form.name);
+    
 }
+document.addEventListener('DOMContentLoaded', initGame);  //initGame se ejecute una sola vez
 
 function answerYes(index) {             //cambia color de fondo y oculta boton si
     const list = document.getElementById("questionsList");

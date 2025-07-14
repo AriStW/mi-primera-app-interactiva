@@ -81,3 +81,13 @@ li {
     font-family: cursive;
 
 }
+#formInitMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+    background-color: #d9d5a7;
+    border-style: solid;
+     border-color: coral;
+}
