@@ -15,73 +15,48 @@
     <div id="questions">
         <h2 id="welcome">Hola las Reglas son</h2>
         <p>Responde por si o por no</p>
-        <p>Luego Cuenta cuantas respuestas estan en verde</p>
-        <p>Finalente presiona para Ver los resultados</p>
-        <ol>
-            <li id="question1">¿Se interesa genuinamente por cómo me siento, incluso en cosas pequeñas?
-                <button id="buttonYesQuestion1"
-                    onclick="answerYes(question1,buttonYesQuestion1,buttonNoQuestion2)">si</button>
-                <button id="buttonNoQuestion1"
-                    onclick="answerNo(question1,buttonNoQuestion1,buttonYesQuestion2)">no</button>
+        <p>Luego presiona para Ver resultado</p>
+        <ol id=questionsList>
+            <li>¿Se interesa genuinamente por cómo me siento, incluso en cosas pequeñas?
+                <button onclick="answerYes(0)">si</button>
+                <button onclick="answerNo(0)">no</button>
             </li>
-            <li id="question2">¿Busca pasar tiempo conmigo sin que haya un motivo específico?
-                <button id="buttonYesQuestion2"
-                    onclick="answerYes(question2,buttonYesQuestion2,buttonNoQuestion1)">si</button>
-                <button id="buttonNoQuestion2"
-                    onclick="answerNo(question2,buttonNoQuestion2,buttonYesQuestion1)">no</button>
+            <li >¿Busca pasar tiempo conmigo sin que haya un motivo específico?
+                <button onclick="answerYes(1)">si</button>
+                <button onclick="answerNo(1)">no</button>
             </li>
-            <li id="question3">¿Me escucha con atención cuando hablo, aunque no sea algo
-                importante?
-                <button id="buttonYesQuestion3"
-                    onclick="answerYes(question3,buttonYesQuestion3,buttonNoQuestion3)">si</button>
-                <button id="buttonNoQuestion3"
-                    onclick="answerNo(question3,buttonNoQuestion3,buttonYesQuestion3)">no</button>
+            <li>¿Me escucha con atención cuando hablo, aunque no sea algo importante?
+                <button onclick="answerYes(2)">si</button>
+                <button onclick="answerNo(2)">no</button>
             </li>
-            <li id="question4">¿Me ha mirado alguna vez como si yo fuera lo más especial en el
-                lugar?
-                <button id="buttonYesQuestion4"
-                    onclick="answerYes(question4,buttonYesQuestion4,buttonNoQuestion4)">si</button>
-                <button id="buttonNoQuestion4"
-                    onclick="answerNo(question4,buttonNoQuestion4,buttonYesQuestion4)">no</button>
+            <li>¿Me ha mirado alguna vez como si yo fuera lo más especial en el lugar?
+                <button onclick="answerYes(3)">si</button>
+                <button onclick="answerNo(3)">no</button>
             </li>
-            <li id="question5">¿Se acuerda de detalles que le conté hace tiempo?
-                <button id="buttonYesQuestion5"
-                    onclick="answerYes(question5,buttonYesQuestion5,buttonNoQuestion5)">si</button>
-                <button id="buttonNoQuestion5"
-                    onclick="answerNo(question5,buttonNoQuestion5,buttonYesQuestion5)">no</button>
+            <li>¿Se acuerda de detalles que le conté hace tiempo?
+                <button onclick="answerYes(4)">si</button>
+                <button onclick="answerNo(4)">no</button>
             </li>
-            <li id="question6">¿Se pone un poco celosa o protectora cuando alguien más se me
-                acerca?
-                <button id="buttonYesQuestion6"
-                    onclick="answerYes(question6,buttonYesQuestion6,buttonNoQuestion6)">si</button>
-                <button id="buttonNoQuestion6"
-                    onclick="answerNo(question6,buttonNoQuestion6,buttonYesQuestion6)">no</button>
+            <li>¿Se pone un poco celosa o protectora cuando alguien más se me acerca?
+                <button onclick="answerYes(5)">si</button>
+                <button onclick="answerNo(5)">no</button>
             </li>
-            <li id="question7">¿Hace cosas para hacerme sentir bien, incluso sin que se lo pida?
-                <button id="buttonYesQuestion7"
-                    onclick="answerYes(question7,buttonYesQuestion7,buttonNoQuestion7)">si</button>
-                <button id="buttonNoQuestion7"
-                    onclick="answerNo(question7,buttonNoQuestion7,buttonYesQuestion7)">no</button>
+            <li>¿Hace cosas para hacerme sentir bien, incluso sin que se lo pida?
+                <button onclick="answerYes(6)">si</button>
+                <button onclick="answerNo(6)">no</button>
             </li>
-            <li id="question8">¿Me incluye en sus planes a futuro o habla de “nosotros”?
-                <button id="buttonYesQuestion8"
-                    onclick="answerYes(question8,buttonYesQuestion8,buttonNoQuestion8)">si</button>
-                <button id="buttonNoQuestion8"
-                    onclick="answerNo(question8,buttonNoQuestion8,buttonYesQuestion8)">no</button>
+            <li>¿Me incluye en sus planes a futuro o habla de “nosotros”?
+                <button onclick="answerYes(7)">si</button>
+                <button onclick="answerNo(7)">no</button>
             </li>
-            <li id="question9">¿Me ha dicho o demostrado que me admira o que le inspiro algo
+            <li>¿Me ha dicho o demostrado que me admira o que le inspiro algo
                 especial?
-                <button id="buttonYesQuestion9"
-                    onclick="answerYes(question9,buttonYesQuestion9,buttonNoQuestion9)">si</button>
-                <button id="buttonNoQuestion9"
-                    onclick="answerNo(question9,buttonNoQuestion9,buttonYesQuestion9)">no</button>
+                <button onclick="answerYes(8)">si</button>
+                <button onclick="answerNo(8)">no</button>
             </li>
-            <li id="question10">¿Ha mostrado tristeza o enojo al pensar en perderme o alejarse de
-                mí
-                <button id="buttonYesQuestion10"
-                    onclick="answerYes(question10,buttonYesQuestion10,buttonNoQuestion10)">si</button>
-                <button id="buttonNoQuestion10"
-                    onclick="answerNo(question10,buttonNoQuestion10,buttonYesQuestion10)">no</button>
+            <li>¿Ha mostrado tristeza o enojo al pensar en perderme o alejarse de mí?
+                <button onclick="answerYes(9)">si</button>
+                <button onclick="answerNo(9)">no</button>
             </li>
         </ol>
         <button id="result" onclick="seeResult()">Ver resultado</button>

@@ -1,3 +1,5 @@
+let resultList= [0,0,0,0,0,0,0,0,0,0];
+
 function initGame() {                                           //inicia juego solicitando nombre saluda y mostrar cuerpo de juego
     const welcome = document.getElementById("welcome");
     const questions = document.getElementById("questions");
@@ -7,27 +9,31 @@ function initGame() {                                           //inicia juego s
     questions.style.display = "flex";                           
 }
 
-function answerYes(question, buttonYes, buttonNo) {             //cambia color de fondo y oculta boton si
+function answerYes(index) {             //cambia color de fondo y oculta boton si
+    const list = document.getElementById("questionsList");
+    const elemento= list.getElementsByTagName("li");
 
-    question.style.backgroundColor = "#00FF00";
-    buttonYes.style.display = "none";
-    buttonNo.style.display = "block";
+    elemento[index].style.backgroundColor = "#00FF00";
+    resultList[index] = 1;    
 }
 
-function answerNo(question, buttonNo, buttonYes) {              //cambia color de fondo y oculta boton no
+function answerNo(index) {              //cambia color de fondo y oculta boton no
+    const list = document.getElementById("questionsList");
+    const elemento= list.getElementsByTagName("li");
 
-    question.style.backgroundColor = "#FF0000";
-    buttonNo.style.display = "none";
-    buttonYes.style.display = "block";
+    elemento[index].style.backgroundColor = "#FF0000";
+    resultList[index] = 0;  
 }
 
 function seeResult() {                                          //ingresa la cantidad de si a futuro mejorar o autoatizar con un metodo de acuulacion
-    let result = prompt("Por favor, ingresa la cantidad de respuestas en verde:");
+    let result = resultList.reduce((acu, valueNow) => acu + valueNow, 0);
     
     printResult(result);
+    console.log(resultList);
+    console.log(result);
 }
 
-function printResult(result) {                                  //desoculta lista de resultados y resulta el correspondiente
+function printResult(result) {                                  //desoculta     
     const result8to10 = document.getElementById("result8to10");
     const result5to7 = document.getElementById("result5to7");
     const result0to4 = document.getElementById("result0to4");
@@ -45,3 +51,4 @@ function printResult(result) {                                  //desoculta list
         result5to7.style.backgroundColor = "#00FF00";
     }
 }
+
