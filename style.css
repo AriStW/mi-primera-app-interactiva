@@ -65,8 +65,19 @@ li {
 #result:hover {
     background-color: #3e8e41;
 }
-
 #listResult {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#listResult>li {
     display: none;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(228, 7, 44);
+    width: 70%;
+    height: 40%;
+    font-size: xx-large;
+    font-family: cursive;
+
 }

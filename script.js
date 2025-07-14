@@ -1,52 +1,64 @@
-let resultList= [0,0,0,0,0,0,0,0,0,0];
+let yesOrNoList = [];
 
 function initGame() {                                           //inicia juego solicitando nombre saluda y mostrar cuerpo de juego
     const welcome = document.getElementById("welcome");
     const questions = document.getElementById("questions");
+    const initMenu = document.getElementById("initMenu");
 
-    let name = prompt("Por favor, ingresa tu nombre:");         
-    welcome.textContent = "Hola " + name + " las Reglas son";   
-    questions.style.display = "flex";                           
+    let name = prompt("Por favor, ingresa tu nombre:");
+    welcome.textContent = "Bienvenido/a " + name +"descubrelo respondiendo si o no";
+    questions.style.display = "flex";
+    initMenu.style.display = "none";
 }
 
 function answerYes(index) {             //cambia color de fondo y oculta boton si
     const list = document.getElementById("questionsList");
-    const elemento= list.getElementsByTagName("li");
+    const element = list.getElementsByTagName("li");
 
-    elemento[index].style.backgroundColor = "#00FF00";
-    resultList[index] = 1;    
+    element[index].style.backgroundColor = "#00FF00";
+    yesOrNoList[index] = "yes";
 }
 
 function answerNo(index) {              //cambia color de fondo y oculta boton no
     const list = document.getElementById("questionsList");
-    const elemento= list.getElementsByTagName("li");
+    const element = list.getElementsByTagName("li");
 
-    elemento[index].style.backgroundColor = "#FF0000";
-    resultList[index] = 0;  
+    element[index].style.backgroundColor = "#FF0000";
+    yesOrNoList[index] = "no";
 }
 
 function seeResult() {                                          //ingresa la cantidad de si a futuro mejorar o autoatizar con un metodo de acuulacion
-    let result = resultList.reduce((acu, valueNow) => acu + valueNow, 0);
-    
-    printResult(result);
+    const yesArray = yesOrNoList.filter(element => element === "yes");
+    const yesCounter = yesArray.length;
+    console.log(yesCounter);
+    const optionByYesCounter = filterResult(yesCounter);
+    printResult(optionByYesCounter);
+    const questions = document.getElementById("questions");
+    questions.style.display = "none";
+
+    console.log(optionByYesCounter);
 }
 
-function printResult(result) {                                  //desoculta     
-    const result8to10 = document.getElementById("result8to10");
-    const result5to7 = document.getElementById("result5to7");
-    const result0to4 = document.getElementById("result0to4");
-    const finishResult = document.getElementById("listResult");
+function printResult(option) {
+    const answerList = document.getElementById("listResult");                           //desoculta     
+    const answersHTMLCollection = answerList.getElementsByTagName("li");
+    const answers = Array.from(answersHTMLCollection);
 
-    finishResult.style.display = "flex";                        
+    answers.map((answer, index) => {
+        if (index === option) {
+            answerList.style.display = "flex";
+            answersHTMLCollection[option].style.display = "flex";
+        }
+    });
 
-    if (result <= 4) {
-        result0to4.style.backgroundColor = "#00FF00";
-    }
-    else if (result >= 8) {
-        result8to10.style.backgroundColor = "#00FF00";
-    }
-    else if (result >= 5 && result <= 7) {
-        result5to7.style.backgroundColor = "#00FF00";
-    }
 }
 
+function filterResult(yesCounter) {
+    if (yesCounter <= 4) {
+        return 2;
+    } else if (yesCounter >= 8) {
+        return 0;
+    } else {
+        return 1;
+    }
+}

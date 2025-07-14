@@ -9,19 +9,19 @@
 
 <body>
     <h1>¿Me quiere? ¿no me quiere?</h1>
-    <h2>Descubrelo aqui</h2>
-    <p>Un pequeño juego que te permite saber si hay chances de que esa persona este enamorada de ti</p>
-    <div><button id="initGame" onclick="initGame()">Iniciar juego</button></div>
+    <div id="initMenu">
+        <h2>Descubrelo aqui</h2>
+        <p>Un pequeño juego que te permite saber si hay chances de que esa persona este enamorada de ti</p>
+        <div><button id="initGame" onclick="initGame()">Iniciar juego</button></div>
+    </div>
     <div id="questions">
-        <h2 id="welcome">Hola las Reglas son</h2>
-        <p>Responde por si o por no</p>
-        <p>Luego presiona para Ver resultado</p>
+        <h2 id="welcome"></h2>
         <ol id=questionsList>
             <li>¿Se interesa genuinamente por cómo me siento, incluso en cosas pequeñas?
                 <button onclick="answerYes(0)">si</button>
                 <button onclick="answerNo(0)">no</button>
             </li>
-            <li >¿Busca pasar tiempo conmigo sin que haya un motivo específico?
+            <li>¿Busca pasar tiempo conmigo sin que haya un motivo específico?
                 <button onclick="answerYes(1)">si</button>
                 <button onclick="answerNo(1)">no</button>
             </li>
@@ -61,11 +61,11 @@
         </ol>
         <button id="result" onclick="seeResult()">Ver resultado</button>
     </div>
-    <div id="listResult">
-        <ul>
-            <li id="result8to10">8 a 10 "sí": Muy probablemente está enamorada de vos.</li>
-            <li id="result5to7">5 a 7 "sí": Hay sentimientos fuertes, quizás amor en desarrollo.</li>
-            <li id="result0to4">Menos de 5 "sí": Puede haber cariño o atracción, pero tal vez no amor profundo aún.</li>
+    <div>
+        <ul id="listResult">
+            <li> Muy probablemente está enamorada de vos.</li>
+            <li> Hay sentimientos fuertes, quizás amor en desarrollo.</li>
+            <li> Puede haber cariño o atracción, pero tal vez no amor profundo aún.</li>
         </ul>
     </div>
     <footer>
