@@ -29,8 +29,6 @@ function seeResult() {                                          //ingresa la can
     let result = resultList.reduce((acu, valueNow) => acu + valueNow, 0);
     
     printResult(result);
-    console.log(resultList);
-    console.log(result);
 }
 
 function printResult(result) {                                  //desoculta     
