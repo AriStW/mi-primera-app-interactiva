@@ -1,13 +1,13 @@
 let yesOrNoList = [];
 
-function initGame() {       //inicia juego solicitando nombre saluda y mostrar cuerpo de juego                                   
+function initGame() {       //inicia juego solicitando nombre                                    
     const form = document.getElementById('formInitMenu');
     const welcome = document.getElementById("welcome");
     const questions = document.getElementById("questions");
     
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-        const name = document.getElementById("name").value;
+        const name = document.getElementById("name").value;  
 
         form.style.display = "none";
         questions.style.display = "flex";
@@ -18,51 +18,50 @@ function initGame() {       //inicia juego solicitando nombre saluda y mostrar c
     console.log(form.name);
     
 }
-document.addEventListener('DOMContentLoaded', initGame);  //initGame se ejecute una sola vez
+document.addEventListener('DOMContentLoaded', initGame);  //necesario para que initGame se ejecute una sola vez
 
-function answerYes(index) {             //cambia color de fondo y oculta boton si
+function answerYes(index) {             
     const list = document.getElementById("questionsList");
     const element = list.getElementsByTagName("li");
 
-    element[index].style.backgroundColor = "#00FF00";
-    yesOrNoList[index] = "yes";
+    element[index].style.backgroundColor = "#00FF00";    //cambia color de fondo a verde en respuestas yes
+    yesOrNoList[index] = "yes";                          //guarda respuesta yes en un array en cuyo index conincidente orden de la pregunta
 }
 
-function answerNo(index) {              //cambia color de fondo y oculta boton no
+function answerNo(index) {              
     const list = document.getElementById("questionsList");
     const element = list.getElementsByTagName("li");
 
-    element[index].style.backgroundColor = "#FF0000";
-    yesOrNoList[index] = "no";
+    element[index].style.backgroundColor = "#FF0000";   //cambia color de fondo a rojo en respuestas no
+    yesOrNoList[index] = "no";                          //guarda respuesta no en un array en cuyo index conincidente orden de la pregunta
 }
 
-function seeResult() {                                          //ingresa la cantidad de si a futuro mejorar o autoatizar con un metodo de acuulacion
-    const yesArray = yesOrNoList.filter(element => element === "yes");
-    const yesCounter = yesArray.length;
-    console.log(yesCounter);
-    const optionByYesCounter = filterResult(yesCounter);
-    printResult(optionByYesCounter);
+function seeResult() {                                          
+    const yesArray = yesOrNoList.filter(element => element === "yes"); //filtra y guarda en array respuesta yes
+    const yesCounter = yesArray.length;                                //contador de yes
+    const optionByYesCounter = filterResult(yesCounter);               
+
+    printResult(optionByYesCounter);   
+
     const questions = document.getElementById("questions");
-    questions.style.display = "none";
-
-    console.log(optionByYesCounter);
+    questions.style.display = "none";                                   //oculta las preguntas
 }
 
 function printResult(option) {
-    const answerList = document.getElementById("listResult");                           //desoculta     
+    const answerList = document.getElementById("listResult");                                
     const answersHTMLCollection = answerList.getElementsByTagName("li");
     const answers = Array.from(answersHTMLCollection);
 
-    answers.map((answer, index) => {
+    answers.map((answer, index) => {                                    //uso  de map para recorrer (a mejorar)
         if (index === option) {
             answerList.style.display = "flex";
-            answersHTMLCollection[option].style.display = "flex";
+            answersHTMLCollection[option].style.display = "flex";       //muestra la respuesta
         }
     });
 
 }
 
-function filterResult(yesCounter) {
+function filterResult(yesCounter) { //segun cant de respuestas afirativas esta funcion filtra sengun el rango definiciondo la opcion correspondiente
     if (yesCounter <= 4) {
         return 2;
     } else if (yesCounter >= 8) {
